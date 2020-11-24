@@ -9,6 +9,7 @@ export default function AuthOptions() {
 
   const register = () => history.push("/register");
   const login = () => history.push("/login");
+  const Create = () => history.push("/p");
   const logout = () => {
     setAdminData({
       token: undefined,
@@ -21,7 +22,9 @@ export default function AuthOptions() {
   return (
     <nav className="auth-options">
       {adminData.admin ? (
+        <div>
         <button onClick={logout}>Log out</button>
+        <button onClick={Create}>item</button></div>
       ) : (
         <>
           <button onClick={register}>Register</button>

@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import Header from '../layout/Header';
-import Book from '../../Book/Appp';
-import {Provider} from 'react-redux';
-import store from '../../store';
+import Book from '../../Screen/Book/Appp';
 export default function Homes() {
   const { userData } = useContext(UserContext);
 
@@ -14,7 +12,7 @@ export default function Homes() {
     
     <div className="page">
       {userData.user ? (
-        <h1>Welcome {userData.user.displayName} <Provider store={store}><Book/></Provider> </h1>
+        <h1>Welcome {userData.user.displayName} <Book/> </h1>
       ) : (
         <>
         <h2>You are not logged in</h2>

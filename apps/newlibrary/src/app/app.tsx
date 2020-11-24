@@ -10,10 +10,15 @@ import Register from "../components/auth/Register";
 import UserContext from "../context/UserContext";
 import AdminContext from "../context/adminContext";
 import Home from '../components/pages/Home';
-import Cardssss from "../Bookdetails/bdetails";
-
+import ProductScren from '../Screen/Bookdetails/bdetails';
 import Fpage from '../components/pages/Fpage';
-
+import Cartscreen from '../Screen/Cartscreen/Cartscreen';
+import ShippingScreen from '../Screen/Cartscreen/ShippingScreen';
+import PaymentScreen from '../Screen/Cartscreen/PaymentScreen';
+import PlaceOrderScreen from '../Screen/Cartscreen/PlaceOrderScreen';
+import ProductsScreen from '../Screen/productsScreen';
+import Book from '../Screen/Book/Appp';
+import Bookcopy from '../Screen/Bookcopy/Appp';
 import "./app.css";
 
 export default function App() {
@@ -84,15 +89,10 @@ useEffect(() => {
 
  
 
-  return (
-
-    
+  return (  
     <>
     
       <BrowserRouter>
-  
-      
-      
         <UserContext.Provider value={{ userData, setUserData }}>
           <div className="container">
             <Switch>
@@ -100,7 +100,11 @@ useEffect(() => {
               <Route path="/b" component={Homes} />
               <Route path="/ulogin" component={Logins} />
               <Route path="/uregister" component={Registers} />
-              <Route path="/ubdetails/:id" component={Cardssss}/>
+              <Route  path="/api/products/:id" component={ProductScren} />
+              <Route  path="/cart/:id?" component={Cartscreen} />
+              <Route path="/shipping" component={ShippingScreen} />
+              <Route path="/payment" component={PaymentScreen} />
+              <Route path="/placeorder" component={PlaceOrderScreen} />
               </Switch>
           </div>
         </UserContext.Provider>
@@ -113,8 +117,10 @@ useEffect(() => {
             <Route  path="/a" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route  path="/p" component={ProductsScreen} />
             
-          </Switch>
+
+            </Switch>
         </div>
       </AdminContext.Provider>
       </BrowserRouter>

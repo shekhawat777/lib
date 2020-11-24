@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 import Admin from '../models/adminModel';
-import { environment} from '../../environments/environment'
 
 router.post("/register", async (req, res) => {
   try {
@@ -77,7 +76,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
+///delete 
 router.delete("/delete", auth, async (req, res) => {
   try {
     const deletedAdmin = await Admin.findByIdAndDelete(req.Admin);
@@ -86,7 +85,7 @@ router.delete("/delete", auth, async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+//token
 router.post("/tokenIsValid", async (req, res) => {
   try {
     const token = req.header("x-auth-token");

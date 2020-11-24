@@ -16,6 +16,7 @@ export default function Home() {
           <Link to="/login">Log in Admin</Link>
           <br/>
           <Link to="/ulogin">Log in User</Link>
+        
         </>
       )}
     </div>

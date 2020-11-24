@@ -1,10 +1,11 @@
 
 export interface Bdatas {
   id:Number;
-  title: string;
-  imgsrcc?: string;
-  bprice: string;
-  
+  name: string;
+  image?: string;
+  price: string;
+  description:string;
+  qtyInStock:Number;
 }
 
 

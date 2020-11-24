@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-function Card(props){
+function cards(props){
   
     return( <>
     
@@ -10,11 +9,8 @@ function Card(props){
           <img src={props.imgsrc} alt ='mypic' className='card_img'/>
           <div className='card-info'>
     <span className='card_category'>{props.title}</span>
-
-    <h3 className='card_tittle'>{props.bname}</h3>
-    <div>
-      <Link to={"/ubdetails/"+(props.id)}><button>Borrow-Now</button> </Link>
-    </div>
+    
+    
           </div>
         </div>
       </div>
@@ -22,5 +18,5 @@ function Card(props){
   
     )
   }
-export default Card
+export default cards
 
